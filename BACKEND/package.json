@@ -11,8 +11,8 @@
   "main": "index.js",
   "scripts": {
     "dev":"nodemon index.js",
-    "start": "node index.js",
-    "build":"npm install && npm install --prefix FRONTEND && npm run build --prefix FRONTEND"
+    "start": "npm start",
+    "build":"npm install"
   },
   "dependencies": {
     "bcryptjs": "^3.0.2",
