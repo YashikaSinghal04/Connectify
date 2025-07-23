@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(cors());
 
-const PORT = process.env.PORT || 4002;
+
 const URI = process.env.MONGODB_URI;
 
 if (!URI) {
@@ -51,9 +51,12 @@ app.use("/api/message", messageRoute);
 
 
 
-
-
-
+if(process.env.NODE_ENV !=="production"){
+const PORT = process.env.PORT || 4002;
 server.listen(PORT, () => {
   console.log(`Server is Running on port ${PORT}`);
 });
+}
+// Export server for vercel
+export default index
+
