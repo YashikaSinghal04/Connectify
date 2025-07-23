@@ -22,11 +22,9 @@ export const getReceiverSocketId=(receiverId)=>{
 const users={}
 
 io.on("connection", (socket) => {
-    console.log("a user connected", socket.id);
     const userId=socket.handshake.query.userId
     if(userId){
         users[userId]=socket.id
-        console.log("hello",users)
     }
     // used to send the event to all connected users
  io.emit("getOnlineUsers",Object.keys(users));
@@ -37,7 +35,6 @@ io.on("connection", (socket) => {
  
 
     socket.on("disconnect", () => {
-        console.log("a user disconnected", socket.id);
          delete users[userId];
     io.emit("getOnlineUsers",Object.keys(users));
     });

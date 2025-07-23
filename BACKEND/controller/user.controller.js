@@ -26,7 +26,6 @@ export const signup =async(req,res)=>{
     }
     
     }catch(error){
-        console.log(error);
         res.status(500).json({error:"Something went wrong"})
     }
 };
@@ -50,7 +49,6 @@ export const login=async(req,res)=>{
         }})
 
     }catch(error){
-        console.log(error);
         res.status(500).json({error:"Internal server error"});
     }
 };
@@ -59,7 +57,6 @@ export const logout=async(req,res)=>{
      res.clearCookie("jwt")
      res.status(201).json({message:"user logged out successfully "})
     }catch(error){
-        console.log(error);
         res.status(500).json({error:"Internal server error"})
     }
 }
@@ -71,7 +68,7 @@ export const allUser = async(req,res)=>{
         res.status(201).json(filteredUsers);
 
     }catch(error){
-        console.log("Error in allUsers Controller:"+ error)
+        res.status(500).json({error:"Error in allUsers Controller:"+ error})
     }
 }
 
@@ -80,7 +77,6 @@ export const getAllUsers = async (req, res) => {
     const users = await User.find({}, "-password"); // Exclude password field
     res.status(200).json(users);
   } catch (error) {
-    console.log(error);
     res.status(500).json({ error: "Failed to fetch users" });
   }
 };
