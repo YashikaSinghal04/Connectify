@@ -1,0 +1,32 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+.flex-1::-webkit-scrollbar{
+    display: none;
+}
+
+/* Custom dark scrollbar for chat app */
+::-webkit-scrollbar {
+  width: 8px;
+  background: #1e293b; /* Tailwind's slate-900 */
+}
+::-webkit-scrollbar-thumb {
+  background: #334155; /* Tailwind's slate-800 */
+  border-radius: 4px;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #334155 #1e293b;
+}
+
+/* Hide scrollbar for all elements */
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
