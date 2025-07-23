@@ -3,10 +3,14 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-
+import { fileURLToPath } from 'url';
+import path from 'path';
 import userRoute from "./routes/user.route.js";
 import messageRoute from "./routes/message.routes.js"
 import { app, server } from "./SocketIO/server.js";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 dotenv.config();
 
@@ -38,6 +42,17 @@ connectDB();
 //routes
 app.use("/api/user", userRoute);
 app.use("/api/message", messageRoute);
+
+
+
+
+
+
+
+
+
+
+
 
 server.listen(PORT, () => {
   console.log(`Server is Running on port ${PORT}`);
