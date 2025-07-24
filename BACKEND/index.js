@@ -14,7 +14,7 @@ dotenv.config();
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-  origin: ["https://superlative-kringle-b6147f.netlify.app"],
+   origin: ["https://dancing-semifreddo-bef3f8.netlify.app"],
   credentials: true
 }));
 
