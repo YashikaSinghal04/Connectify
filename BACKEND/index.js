@@ -14,7 +14,7 @@ dotenv.config();
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-  origin: ["https://resplendent-wisp-9a6840.netlify.app"], // your actual Netlify URL
+  origin: ["https://guileless-pixie-1032da.netlify.app"], // your actual Netlify URL
   credentials: true
 }));
 
