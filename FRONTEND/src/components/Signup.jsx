@@ -29,12 +29,16 @@ function Signup() {
   };
 
   try {
-    const response = await axios.post("/api/user/signup", userInfo);
-    if (response.data) {
-      alert("Signup successful");
-      localStorage.setItem("CONNECTIFY", JSON.stringify(response.data));
-      setAuthUser(response.data);
-    }
+  const response = await axios.post(
+    "/api/user/signup",
+    userInfo,
+    { withCredentials: true } 
+  );
+  if (response.data) {
+    alert("Signup successful");
+    localStorage.setItem("CONNECTIFY", JSON.stringify(response.data));
+    setAuthUser(response.data);
+  }
   } catch (error) {
     console.error("Signup error:", error);
   }
