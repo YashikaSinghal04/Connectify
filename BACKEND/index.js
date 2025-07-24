@@ -14,7 +14,7 @@ dotenv.config();
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-  origin: ["https://curious-bienenstitch-daf4b2.netlify.app"], // your actual Netlify URL
+  origin: ["https://cheery-palmier-6dd618.netlify.app"], // your actual Netlify URL
   credentials: true
 }));
 
