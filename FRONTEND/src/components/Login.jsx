@@ -20,21 +20,23 @@ function Login() {
       password: data.password,
     };
     setLoading(true);
-    try {
-      const response = await axios.post("/api/user/login", userInfo);
-      toast.success("Login successful!");
-      localStorage.setItem("CONNECTIFY", JSON.stringify(response.data.user));
-      setAuthUser(response.data.user);
-    } catch (error) {
-      console.log(error);
-      toast.error(
-        error.response?.data?.error || "Login failed. Please try again."
-      );
-    } finally {
-      setLoading(false);
-    }
-  };
-
+   try {
+  const response = await axios.post(
+    "/api/user/login",
+    userInfo,
+    { withCredentials: true } 
+  );
+  toast.success("Login successful!");
+  localStorage.setItem("CONNECTIFY", JSON.stringify(response.data.user));
+  setAuthUser(response.data.user);
+} catch (error) {
+  console.log(error);
+  toast.error(
+    error.response?.data?.error || "Login failed. Please try again."
+  );
+} finally {
+  setLoading(false);
+}
   return (
     <div className="flex h-screen w-full items-center justify-center bg-gray-900">
       <div className="w-full max-w-md p-8 space-y-6 bg-gray-800 rounded-lg shadow-lg">
