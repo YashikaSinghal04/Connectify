@@ -13,7 +13,10 @@ dotenv.config();
 // middleware
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors());
+app.use(cors({
+  origin: ["https://superlative-kringle-b6147f.netlify.app"],
+  credentials: true
+}));
 
 const PORT = process.env.PORT || 4001;
 const URI = process.env.MONGODB_URI;
