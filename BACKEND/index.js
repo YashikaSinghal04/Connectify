@@ -14,7 +14,7 @@ dotenv.config();
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-   origin: ["https://dancing-semifreddo-bef3f8.netlify.app"],
+  origin: ["https://frolicking-cobbler-805b0d.netlify.app"], // your actual Netlify URL
   credentials: true
 }));
 
