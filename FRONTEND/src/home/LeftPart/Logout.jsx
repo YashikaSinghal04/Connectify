@@ -10,16 +10,19 @@ function Logout() {
   const [authUser, setAuthUser] = useAuth();
   
   const handleLogout = async () => {
-    try {
-      const res = await axios.post("/api/user/logout");
-      localStorage.removeItem("CONNECTIFY");
-      setAuthUser(null);
-      toast.success("Logged out successfully");
-    } catch (error) {
-      console.log("Error in Logout", error);
-      toast.error("Logout failed. Please try again.");
-    }
-  };
+ try {
+  await axios.post(
+    "/api/user/logout",
+    {},
+    { withCredentials: true } 
+  );
+  localStorage.removeItem("CONNECTIFY");
+  setAuthUser(null);
+  toast.success("Logged out successfully");
+} catch (error) {
+  console.log("Error in Logout", error);
+  toast.error("Logout failed. Please try again.");
+}
 
   return (
     <div className='h-[10vh]'>
