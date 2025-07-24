@@ -14,7 +14,7 @@ dotenv.config();
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-  origin: ["https://frolicking-cobbler-805b0d.netlify.app"], // your actual Netlify URL
+  origin: ["https://jolly-tulumba-744a66.netlify.app"], // your actual Netlify URL
   credentials: true
 }));
 
