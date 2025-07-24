@@ -74,9 +74,9 @@ export const allUser = async(req,res)=>{
 
 export const getAllUsers = async (req, res) => {
   try {
-    const users = await User.find({}, "-password"); // Exclude password field
-    res.status(200).json(users);
-  } catch (error) {
+ const users = await User.find({ _id: { $ne: req.user._id } });
+  res.status(200).json(users);
+} catch (error) {
     res.status(500).json({ error: "Failed to fetch users" });
   }
 };
