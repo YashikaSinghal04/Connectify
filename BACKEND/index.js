@@ -14,7 +14,7 @@ dotenv.config();
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-  origin: ["https://jolly-tulumba-744a66.netlify.app"], // your actual Netlify URL
+  origin: ["https://curious-bienenstitch-daf4b2.netlify.app"], // your actual Netlify URL
   credentials: true
 }));
 
