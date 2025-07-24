@@ -6,7 +6,7 @@ const createTokenAndSaveCookie=(userId,res)=>{
     res.cookie("jwt",token,{
         httpOnly:true,   //xss attack s hme bachayga
         secure:true,
-        sameSite:"strict"  //csrf attack s bchayga
+        sameSite:"none"  //csrf attack s bchayga
     });
    
 }
